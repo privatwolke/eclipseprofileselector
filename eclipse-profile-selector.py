@@ -6,13 +6,9 @@ import subprocess
 
 from gi.repository import Gtk
 
-
 class EclipseProfileSelector:
 	
-	PROFILE_TEMPLATE = """<big><b>{name}</b></big>
-<span size="2000"> </span>
-<small>{path}</small>"""
-	
+	PROFILE_TEMPLATE = "<big><b>{name}</b></big>\n<span size='2000'> </span>\n<small>{path}</small>"
 	PROFILE_DIRECTORY = os.path.expanduser("~/.eclipse-profiles")
 	
 	def __init__(self):
@@ -33,17 +29,12 @@ class EclipseProfileSelector:
 		self.profileCreator = builder.get_object("profileCreatorDialog")
 		self.profileNameInput = builder.get_object("newProfileName")
 		self.addButton = builder.get_object("addButton")
-		
-		renderer = Gtk.CellRendererText()
-		renderer.set_property("xpad", 6)
-		renderer.set_property("ypad", 6)
 	
 		column1 = Gtk.TreeViewColumn("path", Gtk.CellRendererText(visible = False))
 		self.list.append_column(column1)
 		
-		column2 = Gtk.TreeViewColumn("profile", renderer, markup = 0)
+		column2 = Gtk.TreeViewColumn("profile", Gtk.CellRendererText(xpad = 6, ypad = 6), markup = 0)
 		self.list.append_column(column2)
-		
 		
 		self.add_content()
 		
