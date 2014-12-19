@@ -57,7 +57,7 @@ class EclipseProfileSelector:
 		self.launchButton.set_sensitive(len(self.store) > 0)
 	
 	
-	def launch_eclipse(self, widget):
+	def launch_eclipse(self, *widget):
 		_, it = self.list.get_selection().get_selected()
 		profile = os.path.join(
 			EclipseProfileSelector.PROFILE_DIRECTORY,
