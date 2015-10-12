@@ -11,13 +11,12 @@ Profiles are stored by default in `~/.eclipse-profiles`.
 Installation
 ------------
 
-Either install directly using `python setup.py install` or create an egg with
-`python setup.py bdist_egg`.
+Get the latest version with `pip install eclipseprofileselector`.
 
 
 Dependencies
 ------------
 
   * `sudo apt-get install python3-gi` (on Ubuntu/Debian)
-  * python 2.7 (may work on lower versions)
+  * python 2.7 (compabile with python3)
   * eclipse should be installed and in your `$PATH`
