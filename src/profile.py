@@ -1,15 +1,18 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-import os
+import os, gi
 import subprocess
+import pkg_resources
 
+gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
 class EclipseProfileSelector:
 
 	PROFILE_TEMPLATE = "<big><b>{name}</b></big>\n<span size='2000'> </span>\n<small>{path}</small>"
 	PROFILE_DIRECTORY = os.path.expanduser("~/.eclipse-profiles")
+	UI_DEFINITION = pkg_resources.resource_filename(__name__, "ui.glade")
 	ECLIPSE_COMMAND = "eclipse"
 
 	def __init__(self):
@@ -18,7 +21,7 @@ class EclipseProfileSelector:
 			os.mkdir(EclipseProfileSelector.PROFILE_DIRECTORY)
 
 		builder = Gtk.Builder()
-		builder.add_from_file("eclipse-profile-selector.glade")
+		builder.add_from_file(EclipseProfileSelector.UI_DEFINITION)
 		builder.connect_signals(self)
 
 		self.store = Gtk.ListStore(str, str)
@@ -124,6 +127,6 @@ def is_valid_path(path):
 	except OSError:
 		return False
 
-if __name__ == "__main__":
+def main():
 	EclipseProfileSelector()
 	Gtk.main()
