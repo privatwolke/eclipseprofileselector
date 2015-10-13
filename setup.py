@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.2.1'
+version = '0.2.2'
 
 setup(name = 'eclipseprofileselector',
 	version = version,
@@ -20,7 +20,7 @@ setup(name = 'eclipseprofileselector',
 		'Topic :: Utilities'
 	],
 	author = 'Stephan Klein',
-	url = 'https://github.com/privatwolke/eclipse-profile-selector',
+	url = 'https://github.com/privatwolke/eclipseprofileselector',
 	license = 'MIT',
 	packages = ['eclipseprofileselector'],
 	package_data = {

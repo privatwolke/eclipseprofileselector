@@ -1,5 +1,5 @@
-eclipse-profile-selector
-========================
+eclipseprofileselector
+======================
 
 This little application manages Eclipse profiles for you. It understands
 a _profile_ to be a configuration and a workspace folder and is compatible
@@ -17,6 +17,6 @@ Get the latest version with `pip install eclipseprofileselector`.
 Dependencies
 ------------
 
-  * `sudo apt-get install python3-gi` (on Ubuntu/Debian)
+  * `sudo apt-get install python{,3}-gi` (on Ubuntu/Debian)
   * python 2.7 (compabile with python3)
   * eclipse should be installed and in your `$PATH`
