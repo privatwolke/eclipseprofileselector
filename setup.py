@@ -6,7 +6,7 @@ version = '0.2.2'
 setup(name = 'eclipseprofileselector',
 	version = version,
 	description = 'Manage separate Eclipse profiles and workspaces with a nice graphical user interface.',
-	long_description = open('README.md', 'r').read(),
+	long_description = open('README.rst', 'r').read(),
 	keywords = 'eclipse profile',
 	classifiers = [
 		'Development Status :: 4 - Beta',
